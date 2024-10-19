@@ -13,7 +13,7 @@ export let options = {
         characters: {
             executor: 'constant-arrival-rate',
             // How long the test lasts
-            duration: '30s',
+            duration: '10s',
             // How many iterations per timeUnit
             rate: 30,
             // Start `rate` iterations per second

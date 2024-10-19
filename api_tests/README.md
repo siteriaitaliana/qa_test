@@ -1,3 +1,5 @@
-# Install k6
+# How to run the api tests (jest)
 
-https://grafana.com/docs/k6/latest/set-up/install-k6/
+docker build -t api-tests .
+
+docker run --rm -v $(pwd):/app -v $(pwd)/api-report:/app/api-report -w /app api-tests

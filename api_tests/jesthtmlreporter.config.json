@@ -1,0 +1,5 @@
+{
+    "pageTitle": "Api Tests Report",
+    "outputPath": "./api-report/test-report.html",
+    "includeFailureMsg": true
+}

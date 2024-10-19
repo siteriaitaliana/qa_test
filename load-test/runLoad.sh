@@ -1,0 +1,1 @@
+docker run -it --rm -v ./tests:/tests -v ./load-report:/load-report -i grafana/k6 run /tests/restCharacterLoad.js --out json=/load-report/test.json 
