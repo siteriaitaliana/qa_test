@@ -1,5 +1,5 @@
-import { homePageUrl } from '../common/globals'
-import { expect, type Locator, type Page } from '@playwright/test'
+import { HomePageUrl } from '../common/globals'
+import { expect, type Locator } from '@playwright/test'
 import { BasePage } from './basePage'
 
 export class HomePage extends BasePage {
@@ -7,7 +7,6 @@ export class HomePage extends BasePage {
     searchSuggestions: Locator
     showResultsCounter: Locator
     queryResults: Locator
-    queryResultsPlaceHolder: Locator
 
     constructor(page) {
         super(page)
@@ -20,13 +19,10 @@ export class HomePage extends BasePage {
         this.showResultsCounter = page.locator(
             `css=[data-cy='search-showing-results-counter']`
         )
-        this.queryResultsPlaceHolder = page.getByPlaceholder(
-            `Search in our library...`
-        )
     }
 
     async goto() {
-        await this.page.goto(homePageUrl)
+        await this.page.goto(HomePageUrl)
         await expect(this.page).toHaveTitle('Training Library - QA Platform')
     }
 
@@ -41,12 +37,5 @@ export class HomePage extends BasePage {
 
     async getQueryResults() {
         await this.queryResults.textContent()
-    }
-
-    async getqueryResultsPlaceHolderValue() {
-        const element = await this.queryResultsPlaceHolder
-        return await element.evaluate((el) => {
-            return window.getComputedStyle(el).getPropertyValue('value')
-        })
     }
 }

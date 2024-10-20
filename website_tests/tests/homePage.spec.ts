@@ -20,11 +20,6 @@ for (const query of queries) {
         // await page.pause()
         await homePage.clickFirstSuggestion()
 
-        // TODO: Fix this
-        // let results = await homePage.getqueryResultsPlaceHolderValue()
-        // await expect(results).toContain(query.prettyName)
-
-        // TODO: Assert number of results
         await expect(await homePage.showResultsCounter).toBeVisible()
         await expect(await homePage.queryResults).toContainText(
             query.prettyName

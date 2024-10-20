@@ -1,5 +1,4 @@
-import { homePageUrl } from '../common/globals'
-import { expect, type Locator, type Page } from '@playwright/test'
+import { type Locator, type Page } from '@playwright/test'
 
 export class BasePage {
     page: Page
@@ -16,16 +15,12 @@ export class BasePage {
         )
     }
 
-    async goto() {
-        await this.page.goto(homePageUrl)
-        await expect(this.page).toHaveTitle('Training Library - QA Platform')
-    }
-
     async closeInfoBanner() {
-        await this.infoBannerCloseBtn.click()
+        if (this.infoBannerCloseBtn.isVisible())
+            await this.infoBannerCloseBtn.click()
     }
 
     async acceptCookie() {
-        await this.acceptCookieBtn.click()
+        if (this.acceptCookieBtn.isVisible()) await this.acceptCookieBtn.click()
     }
 }

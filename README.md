@@ -22,11 +22,12 @@ Had to create a quick local server to mock the api request/response since the ri
 - docker build -t playwright-tests .
 - docker run --rm -v $(pwd):/app -v $(pwd)/playwright-report:/app/playwright-report -w /app playwright-tests
 
-To open the Report Locally:
+To open the report (html):
 - open playwright-report/index.html 
 
 # Notes:
-The previous steps have only been tested on a MacOS, so don't consider them cross-platform compatible.
-// TODO: https://talent500.co/blog/how-to-integrate-cucumber-with-playwright/
+* The previous steps have only been tested on a MacOS, so don't consider them cross-platform compatible.
+* TODO: Add Cucumber support. [https://talent500.co/blog/how-to-integrate-cucumber-with-playwright/]
+Haven't added for time reasons and because I'm not a fan of Cucumber my self (tried it several times in the past but eventually it ended up only into added cumbersome code and difficult maintenance not eventually reaching its scope to have a common communication ground between tech and non-tech people (e.g.POs) considering how far are the 2 used laanguages).
 
  

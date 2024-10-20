@@ -17,4 +17,4 @@ RUN npx playwright install --with-deps
 COPY . .
 
 # Define the default command to run when the container starts.
-CMD npm run pretest; npm test
+CMD ["npm", "test"]

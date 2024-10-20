@@ -1,7 +1,6 @@
 import http from 'k6/http'
 import { sleep, check } from 'k6'
 
-// TODO: import it from common
 const apiUrl = 'https://rickandmortyapi.com/api/character'
 
 export let options = {

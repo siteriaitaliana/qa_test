@@ -13,4 +13,4 @@ RUN npm ci
 COPY . .
 
 # Define the default command to run when the container starts.
-CMD npm test
+CMD ["npm", "test"]
