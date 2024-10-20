@@ -1,18 +1,18 @@
 import { expect, type Locator } from '@playwright/test'
 import { BasePage } from './basePage'
+import { page } from '../support/hooks'
 
 export class CheckoutBetaPage extends BasePage {
-    nameInput: Locator
-    lastNameInput: Locator
-    emailInput: Locator
-    pwInput: Locator
-    constructor(page) {
+    protected nameInput: Locator
+    protected lastNameInput: Locator
+    protected emailInput: Locator
+    protected pwInput: Locator
+    constructor() {
         super(page)
-        this.page = page
-        this.nameInput = page.getByPlaceholder('First Name')
-        this.lastNameInput = page.getByPlaceholder('Last Name')
-        this.emailInput = page.getByPlaceholder('Your email address')
-        this.pwInput = page.getByPlaceholder('Password')
+        this.nameInput = this.page.getByPlaceholder('First Name')
+        this.lastNameInput = this.page.getByPlaceholder('Last Name')
+        this.emailInput = this.page.getByPlaceholder('Your email address')
+        this.pwInput = this.page.getByPlaceholder('Password')
     }
 
     async fillAndVerifyForm() {

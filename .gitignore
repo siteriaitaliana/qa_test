@@ -8,3 +8,5 @@ tests-out
 *test-report.*
 api-report
 test.json
+*/dist/
+*/cucumber-report/

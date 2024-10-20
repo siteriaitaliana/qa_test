@@ -8,5 +8,7 @@
     },
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.formatOnSave": true,
-    "files.autoSave": "afterDelay"
+    "files.autoSave": "afterDelay",
+    "cucumber.features": ["**/features/**/*.feature"],
+    "cucumber.glue": ["**/features/**/*.js", "**/features/**/*.ts"]
 }

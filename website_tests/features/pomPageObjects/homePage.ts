@@ -1,22 +1,22 @@
-import { HomePageUrl } from '../common/globals'
+import { HomePageUrl } from '../../common/globals'
 import { expect, type Locator } from '@playwright/test'
 import { BasePage } from './basePage'
+import { page } from '../support/hooks'
 
 export class HomePage extends BasePage {
-    searchInput: Locator
-    searchSuggestions: Locator
-    showResultsCounter: Locator
-    queryResults: Locator
+    protected searchInput: Locator
+    protected searchSuggestions: Locator
+    protected showResultsCounter: Locator
+    protected queryResults: Locator
 
-    constructor(page) {
+    constructor() {
         super(page)
-        this.page = page
-        this.searchInput = page.locator('css=.react-autosuggest__input')
-        this.searchSuggestions = page.locator(
+        this.searchInput = this.page.locator('css=.react-autosuggest__input')
+        this.searchSuggestions = this.page.locator(
             `css=[data-cy='search-result-suggestion']`
         )
-        this.queryResults = page.locator(`css=[data-cy='query-text']`)
-        this.showResultsCounter = page.locator(
+        this.queryResults = this.page.locator(`css=[data-cy='query-text']`)
+        this.showResultsCounter = this.page.locator(
             `css=[data-cy='search-showing-results-counter']`
         )
     }
