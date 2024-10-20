@@ -1,6 +1,14 @@
 Feature: QA.com Homepage
 
     Scenario: AWS course search
-        Given User Navigate to the homepage
-        When he searches for "aws"
-        Then the page displays the correct "aws" search results 
+        Given User Navigate to "homepage"
+        When he searches for
+        | searchQuery | 
+        | aws         | 
+        | gcp         |
+        | azure       | 
+        Then the page displays the correct search results 
+        | prettyName | 
+        | aws        | 
+        | gcp        |
+        | azure      | 
