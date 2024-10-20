@@ -9,4 +9,8 @@ app.get('/api/character', (req, res) => {
     res.send(JSON.stringify(data))
 })
 
-app.listen(3000, () => console.log(`Hello world app listening on port 3000!`))
+app.listen(3000, () =>
+    console.log(
+        `Mocking rickandmortyapi server listening on localhost, port 3000!`
+    )
+)
